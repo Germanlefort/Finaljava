@@ -82,3 +82,8 @@ function guardar () {
   localStorage.setItem("direccion", JSON.stringify(direccion));
   localStorage.setItem("localidad", JSON.stringify(localidad));
 }
+                          
+
+fetch ('https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid={API key}')
+.then((response) => response.json())
+.then((json) => response.json());

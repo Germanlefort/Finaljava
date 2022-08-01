@@ -32,7 +32,7 @@ productos.forEach((productos) => {
 })
 
 const agregarAlCarrito = (id) => {
-    const item = Productos.find( (producto) => producto.id === id)
+    const item = productos.find((producto) => producto.id === id)
     carrito.push(item)
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -70,7 +70,7 @@ btnVaciar.addEventListener('click', vaciarCarrito)
 const renderCarrito = () => {
     carritoContenedor.innerHTML = ''
 
-    carrito.forEach((item) => {
+    carrito.forEach((producto) => {
         const div = document.createElement('div')
         div.classList.add('productoEnCarrito')
 
@@ -90,8 +90,8 @@ const renderCantidad = () => {
 
 const renderTotal = () => {
     let total = 0
-    carrito.forEach((producto) => {
-        total += producto.precio
+    carrito.forEach((productos) => {
+        total += productos.precio
     })
 
     precioTotal.innerText = total
